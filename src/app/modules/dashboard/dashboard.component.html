@@ -1,0 +1,16 @@
+<!-- contenedor para la estructura principal del dashboard, utilizando el componente sidenav de material  -->
+<mat-drawer-container class="dashboard-container" autosize>
+  <mat-drawer #drawer class="dashboard-sidenav" mode="side" [opened]="isOpen">
+    <!-- defino un componente para organizar la estructura de el menu sidenav -->
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+
+  <!-- Contenido dinamico a mostrar en la parte principal -->
+  <div class="dashboard-sidenav-content">
+    <!-- Toolbar - recibe una funcion que lanza el metodo de MatDrawer toggle() -->
+    <app-toolbar (toggleDrawer)="drawer.toggle()"></app-toolbar>
+
+    <!-- defini el ruteo a las diferentes vistas del sitio -->
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
