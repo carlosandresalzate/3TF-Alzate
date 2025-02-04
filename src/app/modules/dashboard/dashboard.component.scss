@@ -1,8 +1,12 @@
 .dashboard-container {
   height: 100vh;
-  display: flex;
 }
 
 .dashboard-sidenav-content {
   padding: 16px;
+  height: 200px;
+}
+
+.dashboard-sidenav {
+  padding: 20px;
 }

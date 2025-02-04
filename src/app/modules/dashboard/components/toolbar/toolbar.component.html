@@ -8,4 +8,15 @@
   >
     <mat-icon>menu</mat-icon>
   </button>
+  <!-- aqui deberia mostrar la ubicacion -->
+  <!-- <span >Ubicacion</span> -->
+  <span class="spacer"></span>
+
+  <mat-slide-toggle
+    [(ngModel)]="isChecked"
+    (change)="toggleTheme()"
+    id="slideToggleTheme"
+  >
+    {{ themeSelected }}
+  </mat-slide-toggle>
 </mat-toolbar>

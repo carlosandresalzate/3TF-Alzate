@@ -5,6 +5,14 @@
 <!-- navegacion del sitio -->
 <mat-nav-list>
   <!-- definion de los enlaces: puede mejorar con un for -->
-  <a mat-list-item routerLink="/home" routerLinkActive="active">Home</a>
-  <a mat-list-item routerLink="/students" routerLinkActive="active">Students</a>
+  <a
+    mat-list-item
+    *ngFor="let item of routes"
+    [routerLink]="item.path"
+    routerLinkActive="active"
+  >
+    {{ item.label }}
+  </a>
+  <!-- <a mat-list-item routerLink="/home" routerLinkActive="active">Home</a>
+  <a mat-list-item routerLink="/students" routerLinkActive="active">Students</a> -->
 </mat-nav-list>

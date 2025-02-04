@@ -19,6 +19,11 @@ const routes: Routes = [
             (m) => m.StudentsModule
           ),
       },
+      {
+        path: '',
+        redirectTo: 'students',
+        pathMatch: 'full',
+      },
     ],
   },
 ];
