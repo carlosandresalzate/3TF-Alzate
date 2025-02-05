@@ -10,17 +10,28 @@ export class ThemeService {
     this.updateHtmlClass();
   }
 
+  // TODO: Hay que agregar comentarios
 
-
+  /**
+   *
+   * @param theme
+   */
   setTheme(theme: string): void {
     this.currentTheme = theme;
     this.updateHtmlClass();
   }
 
+  /**
+   *
+   * @returns
+   */
   getTheme(): string {
     return this.currentTheme;
   }
 
+  /**
+   *
+   */
   private updateHtmlClass(): void {
     const htmlElement = document.querySelector('html');
     if (htmlElement) {

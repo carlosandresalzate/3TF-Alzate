@@ -7,7 +7,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class StudentsService {
-  students: Student[] = [
+  // TODO: Mejorar los comentarios
+
+  private students: Student[] = [
     {
       id: generateRandomID(6),
       name: 'John',
