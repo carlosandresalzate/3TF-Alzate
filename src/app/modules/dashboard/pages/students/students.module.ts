@@ -7,6 +7,9 @@ import { StudentsComponent } from './students.component';
 import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 import { FormDialogComponent } from './components/form-dialog/form-dialog.component';
 
+// pipes
+import { SharedModule } from '../../../../shared/shared.module';
+
 //
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
@@ -29,6 +32,7 @@ import { MatInputModule } from '@angular/material/input';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    SharedModule,
   ],
 })
 export class StudentsModule {}

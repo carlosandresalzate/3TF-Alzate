@@ -24,8 +24,22 @@
   <mat-form-field appearance="fill" class="full-width">
     <mat-label>Correo</mat-label>
     <input matInput formControlName="email" placeholder="Correo" />
-    <mat-error *ngIf="studentForm.get('email')?.hasError('required')">
+    <mat-error
+      *ngIf="
+        studentForm.get('email')?.hasError('required') &&
+        (studentForm.get('email')?.touched || studentForm.get('email')?.dirty)
+      "
+    >
       El correo es requerido
+    </mat-error>
+    <!-- Mesaje de error para el formato invalido -->
+    <mat-error
+      *ngIf="
+        studentForm.get('email')?.hasError('email') &&
+        (studentForm.get('email')?.touched || studentForm.get('email')?.dirty)
+      "
+    >
+      Ingrese un correo valido
     </mat-error>
   </mat-form-field>
 

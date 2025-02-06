@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { StudentsService } from '../../../../core/services/students.service';
 import { Student } from './models/student';
 
+import { getNormalizedFullName } from '../../../../shared/utils/string-utils';
+
 import { FormDialogComponent } from './components/form-dialog/form-dialog.component';
 import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 
@@ -23,8 +25,7 @@ export class StudentsComponent implements OnInit {
   // Definicion de las columnas que se van a mostrar en la tabla
   displayedColumns: string[] = [
     'edit',
-    'name',
-    'lastName',
+    'fullName',
     'email',
     'phoneNumber',
     'delete',
@@ -58,7 +59,8 @@ export class StudentsComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.studentsService.deleteStudent(student.id);
-        this.showSnackbar(`${student.name} ${student.lastName}`);
+        const fullName: string = getNormalizedFullName(student);
+        this.showSnackbar(`${fullName} fue eliminado`);
       }
     });
   }
@@ -74,18 +76,20 @@ export class StudentsComponent implements OnInit {
         if (student) {
           // Modo edicion
           this.studentsService.updateStudent(student.id, result);
-          this.showSnackbar(`${result.name} fue editado`);
+          const fullName: string = getNormalizedFullName(student);
+          this.showSnackbar(`${fullName} fue editado`);
         } else {
           // Modo creacion
           this.studentsService.addStudents(result);
-          this.showSnackbar(`${result.name} fue creado`);
+          const fullName: string = getNormalizedFullName(result);
+          this.showSnackbar(`${fullName} fue creado`);
         }
       }
     });
   }
 
   showSnackbar(studentName: string): void {
-    this.snackBar.open(`${studentName} fue eliminado`, `Cerrar`, {
+    this.snackBar.open(`${studentName}`, `Cerrar`, {
       duration: 3000,
       horizontalPosition: 'center',
       verticalPosition: 'top',

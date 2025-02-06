@@ -2,10 +2,11 @@
 <mat-dialog-content>
   <p>
     Estas seguro de que quieres eliminar a
-    <strong> {{ data.name }} {{ data.lastName }}</strong> ?
+    <strong>{{ data | fullName }}</strong>
+    ?
   </p>
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button (click)="onCancel()">Cancelar</button>
-  <button mat-button  (click)="onConfirm()">Eliminar</button>
+  <button mat-button (click)="onConfirm()">Eliminar</button>
 </mat-dialog-actions>

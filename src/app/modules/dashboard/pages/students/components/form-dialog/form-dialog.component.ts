@@ -59,6 +59,9 @@ export class FormDialogComponent implements OnInit {
         // Creacion, envio de datos sin el id (El Servicio student.service.ts genera el id)
         this.dialogRef.close(this.studentForm.value);
       }
+    } else {
+      // Si el formulario no es valido, se marcan todos los controles como "touched", asi se marcan los errores en todos los campos.
+      this.studentForm.markAllAsTouched();
     }
   }
 }
