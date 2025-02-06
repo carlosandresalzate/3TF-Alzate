@@ -48,16 +48,30 @@ export class FormDialogComponent implements OnInit {
 
   onSubmit(): void {
     if (this.studentForm.valid) {
+      // Guarda los valores del formulario.
+      let formData = this.studentForm.value;
+
+      // normaliza los datos: los nombres y apellidos se guardan en minusculas,
+      // y el correo tambien en minusculas.
+      formData = {
+        ...formData,
+        name: formData.name.trim().toLowerCase(),
+        lastName: formData.lastName.trim().toLowerCase(),
+        email: formData.email.trim().toLowerCase(),
+        phoneNumber: formData.phoneNumber.trim(),
+      };
+
       if (this.isEditMode && this.data) {
+        // Modo Edicion: Preserca el id y actualiza con los datos normalizados
         // Edicion, manteniendo el id
         const updatedStudent: Student = {
           ...this.data,
-          ...this.studentForm.value,
+          ...formData,
         };
         this.dialogRef.close(updatedStudent);
       } else {
-        // Creacion, envio de datos sin el id (El Servicio student.service.ts genera el id)
-        this.dialogRef.close(this.studentForm.value);
+        // Modo creacion: envia los datos normalizados ( sin ID, ques e genera)
+        this.dialogRef.close(formData);
       }
     } else {
       // Si el formulario no es valido, se marcan todos los controles como "touched", asi se marcan los errores en todos los campos.
