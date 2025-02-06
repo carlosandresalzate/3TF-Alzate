@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
 import { StudentsService } from '../../../../core/services/students.service';
 import { Student } from './models/student';
+
+import { FormDialogComponent } from './components/form-dialog/form-dialog.component';
 import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
+
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -59,11 +63,32 @@ export class StudentsComponent implements OnInit {
     });
   }
 
+  openFormDialog(student?: Student): void {
+    const dialogRef = this.dialog.open(FormDialogComponent, {
+      width: '500px',
+      data: student ? student : null,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        if (student) {
+          // Modo edicion
+          this.studentsService.updateStudent(student.id, result);
+          this.showSnackbar(`${result.name} fue editado`);
+        } else {
+          // Modo creacion
+          this.studentsService.addStudents(result);
+          this.showSnackbar(`${result.name} fue creado`);
+        }
+      }
+    });
+  }
+
   showSnackbar(studentName: string): void {
     this.snackBar.open(`${studentName} fue eliminado`, `Cerrar`, {
       duration: 3000,
-      horizontalPosition: 'start',
-      verticalPosition: 'bottom',
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
     });
   }
 }

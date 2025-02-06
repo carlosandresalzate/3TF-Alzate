@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>
+  {{ isEditMode ? "Editar Estudiante" : "Crear Estudiante" }}
+</h2>
+<mat-dialog-content [formGroup]="studentForm">
+  <!-- Campo Nombre -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="name" placeholder="Nombre" />
+    <mat-error *ngIf="studentForm.get('name')?.hasError('required')">
+      El nombre es requerido.
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Campo Apellido -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Apellido</mat-label>
+    <input matInput formControlName="lastName" placeholder="Apellido" />
+    <mat-error *ngIf="studentForm.get('lastName')?.hasError('required')">
+      El apellido es requerido
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Campo Correo -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Correo</mat-label>
+    <input matInput formControlName="email" placeholder="Correo" />
+    <mat-error *ngIf="studentForm.get('email')?.hasError('required')">
+      El correo es requerido
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Campo telefono -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Telefono</mat-label>
+    <input matInput formControlName="phoneNumber" placeholder="Telefono" />
+    <mat-error *ngIf="studentForm.get('phoneNumber')?.hasError('required')">
+      El telefono es requerido
+    </mat-error>
+  </mat-form-field>
+</mat-dialog-content>
+<!-- tipo de acciones -->
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button color="primary" (click)="onSubmit()">
+    {{ isEditMode ? "Confirmar" : "Crear" }}
+  </button>
+</mat-dialog-actions>
