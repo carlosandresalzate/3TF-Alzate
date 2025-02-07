@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Student } from '../modules/dashboard/pages/students/models/student';
-import { getNormalizedFullName } from '../shared/utils/string-utils';
+import { Student } from '../../modules/dashboard/pages/students/models/student';
+import { getNormalizedFullName } from '../utils/string-utils';
 
 @Pipe({
   name: 'fullName',
