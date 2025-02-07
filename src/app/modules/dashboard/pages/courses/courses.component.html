@@ -1,1 +1,69 @@
-<p>courses works!</p>
+<div class="courses-container">
+  <div class="actions">
+    <!-- Boton para agregar curso -->
+    <button mat-fab extended>
+      <mat-icon>add_box</mat-icon>
+      Agregar Curso
+    </button>
+  </div>
+  <!-- Titulo -->
+  <h2 appTitleFont>Listado de Cursos</h2>
+
+  <!-- Tabla -->
+  <table mat-table [dataSource]="courses" class="mat-elevation-z8">
+    <!-- Columna: Editar -->
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>Editar</th>
+      <td mat-cell *matCellDef="let course">
+        <button
+          mat-icon-button
+          (click)="showSnackbar('Accion de editar aun no esta implementada')"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <!-- Columna: Nombre -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <!-- TODO: pensar en un Pipe personalizado para usar en nuevos datos  como el nombre de los cursos -->
+      <td mat-cell *matCellDef="let course">
+        <strong>
+          {{ course.name | titlecase }}
+        </strong>
+      </td>
+    </ng-container>
+
+    <!-- Columan: Descripcion -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+      <td mat-cell *matCellDef="let course">
+        {{ course.description }}
+      </td>
+    </ng-container>
+
+    <!-- Columna: Horario -->
+    <!-- TODO: estaria bueno usar el objeto data para estructurar las fechas y con una funcion automatizar el proceso de salida, para no escribir de mas -->
+    <ng-container matColumnDef="schedule">
+      <th mat-header-cell *matHeaderCellDef>Horario/th></th>
+      <td mat-cell *matCellDef="let course">{{ course.schedule }}</td>
+    </ng-container>
+
+    <!-- Columan Acciones -->
+    <!-- TODO: no me gusta tener todas las acciones tan agrupadas. -->
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let course">
+        <button
+          mat-icon-button
+          (click)="showSnackbar('accion de Eliminar no implementada')"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
