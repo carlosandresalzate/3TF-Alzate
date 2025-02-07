@@ -11,5 +11,6 @@ export class SidenavComponent {
   routes = [
     { path: '/home', label: 'Home' },
     { path: '/students', label: 'Estudiantes' },
+    { path: '/courses', label: 'Cursos' },
   ];
 }

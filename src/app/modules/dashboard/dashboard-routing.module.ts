@@ -7,6 +7,7 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     children: [
+      // Rutas existentes: Home, Students
       {
         path: 'home',
         loadChildren: () =>
@@ -20,8 +21,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'courses',
+        loadChildren: () =>
+          import('./pages/courses/courses.module').then((m) => m.CoursesModule),
+      },
+      {
         path: '',
-        redirectTo: 'students',
+        redirectTo: 'courses',
         pathMatch: 'full',
       },
     ],
