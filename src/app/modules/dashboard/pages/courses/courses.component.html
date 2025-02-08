@@ -1,7 +1,7 @@
 <div class="courses-container">
   <div class="actions">
     <!-- Boton para agregar curso -->
-    <button mat-fab extended>
+    <button mat-fab extended (click)="openCourseFormDialog()">
       <mat-icon>add_box</mat-icon>
       Agregar Curso
     </button>
@@ -15,10 +15,7 @@
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef>Editar</th>
       <td mat-cell *matCellDef="let course">
-        <button
-          mat-icon-button
-          (click)="showSnackbar('Accion de editar aun no esta implementada')"
-        >
+        <button mat-icon-button (click)="openCourseFormDialog(course)">
           <mat-icon>edit</mat-icon>
         </button>
       </td>
@@ -45,7 +42,7 @@
     <!-- Columna: Horario -->
     <!-- TODO: estaria bueno usar el objeto data para estructurar las fechas y con una funcion automatizar el proceso de salida, para no escribir de mas -->
     <ng-container matColumnDef="schedule">
-      <th mat-header-cell *matHeaderCellDef>Horario/th></th>
+      <th mat-header-cell *matHeaderCellDef>Horario</th>
       <td mat-cell *matCellDef="let course">{{ course.schedule }}</td>
     </ng-container>
 

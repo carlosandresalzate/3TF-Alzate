@@ -1,0 +1,54 @@
+<h2 mat-dialog-title appTitleFont>
+  {{ isEditMode ? "Editar Curso" : " Agregar Curso" }}
+</h2>
+
+<mat-dialog-content [formGroup]="courseForm">
+  <!-- Campo para el nombre del curso -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="name" placeholder="Nombre del Curso" />
+    <mat-error *ngIf="courseForm.get('name')?.hasError('required')">
+      El nombre es requrido
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Campo para la descripcion del curso -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Descripcion</mat-label>
+    <textarea
+      matInput
+      formControlName="description"
+      placeholder="..."
+    ></textarea>
+    <!-- <input
+      matInput
+      formControlName="description"
+      placeholder="description del curso"
+    /> -->
+    <mat-error *ngIf="courseForm.get('description')?.hasError('required')">
+      La descripcion es requrida
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Campo para el horario del curso -->
+  <!-- esto es  por ahora, luego usando el objeto date y el datapicker mejoramos este campo y obtengo datos mejor trabajados -->
+  <!-- ? La implementacion del datapicker no es simple, require algo mas de lectura. -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Horario</mat-label>
+    <input
+      matInput
+      formControlName="schedule"
+      placeholder="Ej. Lunes 18:00-20:00"
+    />
+    <mat-error *ngIf="courseForm.get('schedule')?.hasError('required')">
+      El Horario es requerido
+    </mat-error>
+  </mat-form-field>
+
+  <mat-dialog-actions align="end">
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-button (click)="onSubmit()">
+      {{ isEditMode ? "Confirmar" : "Crear" }}
+    </button>
+  </mat-dialog-actions>
+</mat-dialog-content>
