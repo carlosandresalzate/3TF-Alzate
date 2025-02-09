@@ -12,5 +12,6 @@ export class SidenavComponent {
     { path: '/home', label: 'Home' },
     { path: '/students', label: 'Estudiantes' },
     { path: '/courses', label: 'Cursos' },
+    { path: '/enrollments', label: 'Inscripciones' },
   ];
 }

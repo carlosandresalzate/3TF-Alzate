@@ -26,6 +26,13 @@ const routes: Routes = [
           import('./pages/courses/courses.module').then((m) => m.CoursesModule),
       },
       {
+        path: 'enrollments',
+        loadChildren: () =>
+          import('./pages/enrollments/enrollments.module').then(
+            (m) => m.EnrollmentsModule
+          ),
+      },
+      {
         path: '',
         redirectTo: 'courses',
         pathMatch: 'full',
