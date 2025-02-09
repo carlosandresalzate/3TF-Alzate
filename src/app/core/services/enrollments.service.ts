@@ -67,7 +67,7 @@ export class EnrollmentsService {
    */
   updateEnrollment(id: string, updateData: Partial<Enrollments>): void {
     this.enrollments = this.enrollments.map((enrollment) =>
-      enrollment.id === id ? { ...enrollment, updateData } : enrollment
+      enrollment.id === id ? { ...enrollment, ...updateData } : enrollment
     );
   }
 
