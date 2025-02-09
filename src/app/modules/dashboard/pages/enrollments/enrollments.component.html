@@ -1,6 +1,14 @@
 <div class="enrollments-container">
   <div class="actions">
-    <button mat-fab extended>
+    <button
+      mat-fab
+      extended
+      (click)="
+        showSnackbar(
+          'El metodo para crear nuevas inscripciones aun no esta implementado'
+        )
+      "
+    >
       <mat-icon>add_box</mat-icon>
       Nueva Inscripcion
     </button>
