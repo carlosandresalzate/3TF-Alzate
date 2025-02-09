@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { ThemeService } from '../../../../core/services/theme.service';
+import { Theme, ThemeService } from '../../../../core/services/theme.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -13,16 +13,18 @@ export class ToolbarComponent {
   @Output() toggleDrawer = new EventEmitter<void>();
 
   // defino la propiedad isChecked:boolean
+  // TODO: puede salir de una base de datos con las configuraciones de usuario
   isChecked: boolean = false;
 
-  // defino el theme light | dark
-  themeSelected: string = 'Light';
+  // Agrego un label que defina si esta en el tema  'Light' | 'Dark'
+  // feedback para el usuario.
+  themeSelected: Theme = this.isChecked ? 'dark' : 'light';
 
   constructor(private themeService: ThemeService) {}
 
+  // TODO: esto se puede refactorizar usando inject(ThemeService): Se debe estudiar sobre como funciona la inyeccion de un servicio
   toggleTheme(): void {
-    const newTheme = this.isChecked ? 'dark-mode' : 'light-mode';
-    this.themeSelected = this.isChecked ? 'Dark' : 'Light';
-    this.themeService.setTheme(newTheme);
+    this.themeSelected = this.isChecked ? 'dark' : 'light';
+    this.themeService.setTheme(this.themeSelected);
   }
 }
