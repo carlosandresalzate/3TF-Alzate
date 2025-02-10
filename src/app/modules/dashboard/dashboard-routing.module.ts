@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
+import { authGuard } from '../../core/guards/auth.guard';
+import { adminGuard } from '../../core/guards/admin.guard';
 
 const routes: Routes = [
   {
@@ -19,11 +21,13 @@ const routes: Routes = [
           import('./pages/students/students.module').then(
             (m) => m.StudentsModule
           ),
+        canActivate: [authGuard, adminGuard],
       },
       {
         path: 'courses',
         loadChildren: () =>
           import('./pages/courses/courses.module').then((m) => m.CoursesModule),
+        canActivate: [authGuard, adminGuard],
       },
       {
         path: 'enrollments',
@@ -31,10 +35,11 @@ const routes: Routes = [
           import('./pages/enrollments/enrollments.module').then(
             (m) => m.EnrollmentsModule
           ),
+        canActivate: [authGuard],
       },
       {
         path: '',
-        redirectTo: 'enrollments',
+        redirectTo: 'home',
         pathMatch: 'full',
       },
     ],
