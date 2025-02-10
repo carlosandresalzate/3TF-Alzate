@@ -53,6 +53,10 @@ export class LoginComponent implements OnInit {
       const { username, password } = this.loginForm.value;
       // llama al servicio de autenticacion
       if (this.authService.login(username, password)) {
+        console.log(
+          'Login exitoso, usuario:',
+          this.authService.getUserRole() !== 'admin' ? 'user' : 'admin'
+        );
         // redirige al dashboard o a la ruta protegida segun el rol
         this.router.navigate(['/dashboard']);
       } else {

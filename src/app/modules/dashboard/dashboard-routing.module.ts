@@ -8,6 +8,7 @@ const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
+    canActivate: [authGuard],
     children: [
       // Rutas existentes: Home, Students
       {

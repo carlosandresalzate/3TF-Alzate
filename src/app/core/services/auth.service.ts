@@ -32,7 +32,7 @@ export class AuthService {
       return true;
     } else if (username && password) {
       this.isAuthenticated = true;
-      this.userRole = 'user';
+      this.userRole = username;
       return true;
     }
     this.isAuthenticated = false;

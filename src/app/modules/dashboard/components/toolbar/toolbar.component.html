@@ -9,8 +9,11 @@
     <mat-icon>menu</mat-icon>
   </button>
   <!-- aqui deberia mostrar la ubicacion -->
+  <span *ngIf="userRole">{{ userRole | titlecase }}</span>
   <!-- <span >Ubicacion</span> -->
   <span class="spacer"></span>
+  <!-- Boton de logout -->
+  <button mat-button (click)="logout()">Logout</button>
 
   <mat-slide-toggle
     [(ngModel)]="isChecked"
