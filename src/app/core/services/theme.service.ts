@@ -36,7 +36,7 @@ export class ThemeService {
    * el DOM para que cargue el tema actual
    */
   constructor() {
-    this.currentTheme;
+    // this.currentTheme;
     this.updateHtmlClass();
   }
 
@@ -48,6 +48,10 @@ export class ThemeService {
   setTheme(theme: Theme) {
     this.currentTheme = `${theme}-mode`;
     this.updateHtmlClass();
+  }
+
+  getCurrentTheme(): Theme {
+    return this.currentTheme === 'dark-mode' ? 'dark' : 'light';
   }
 
   /**
