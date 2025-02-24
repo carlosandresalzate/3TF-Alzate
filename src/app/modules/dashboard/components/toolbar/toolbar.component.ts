@@ -35,7 +35,7 @@ export class ToolbarComponent {
     private router: Router
   ) {
     // ? Obtener el rol
-    this.userRole = this.authService.getUserRole();
+    // this.userRole = this.authService.getUserRole();
 
     // sincronizacion del estado actual del toggle con el tema actual
     const currentTheme = this.themeService.getCurrentTheme();

@@ -1,0 +1,310 @@
+{
+  "users": [
+    {
+      "id": "usr001",
+      "username": "admin1",
+      "email": "admin1@example.com",
+      "password": "admin1pwd",
+      "role": "admin",
+      "name": "Alice",
+      "lastName": "Doe",
+      "phoneNumber": "555-1111"
+    },
+    {
+      "id": "usr002",
+      "username": "admin2",
+      "email": "admin2@example.com",
+      "password": "admin2pwd",
+      "role": "admin",
+      "name": "Bob",
+      "lastName": "Jones",
+      "phoneNumber": "555-2222"
+    },
+    {
+      "id": "usr003",
+      "username": "user1",
+      "email": "user1@example.com",
+      "password": "user1pwd",
+      "role": "user",
+      "name": "Charlie",
+      "lastName": "Smith",
+      "phoneNumber": "555-3333"
+    },
+    {
+      "id": "usr004",
+      "username": "user2",
+      "email": "user2@example.com",
+      "password": "user2pwd",
+      "role": "user",
+      "name": "Dana",
+      "lastName": "Brown",
+      "phoneNumber": "555-4444"
+    },
+    {
+      "id": "usr005",
+      "username": "user3",
+      "email": "user3@example.com",
+      "password": "user3pwd",
+      "role": "user",
+      "name": "Eve",
+      "lastName": "Watson",
+      "phoneNumber": "555-5555"
+    }
+  ],
+  "students": [
+    {
+      "id": "std001",
+      "name": "Juan",
+      "lastName": "Gonzalez",
+      "email": "juan.gonzalez@example.com",
+      "phoneNumber": "555-1001",
+      "activeCoursesId": [
+        "crs001"
+      ],
+      "completedCourses": [
+        {
+          "courseId": "crs003",
+          "approved": true
+        }
+      ]
+    },
+    {
+      "id": "std002",
+      "name": "Ana",
+      "lastName": "Garcia",
+      "email": "ana.garcia@example.com",
+      "phoneNumber": "555-1002",
+      "activeCoursesId": [
+        "crs002"
+      ],
+      "completedCourses": []
+    },
+    {
+      "id": "std003",
+      "name": "Pedro",
+      "lastName": "Rodriguez",
+      "email": "pedro.rodriguez@example.com",
+      "phoneNumber": "555-1003",
+      "activeCoursesId": [],
+      "completedCourses": []
+    },
+    {
+      "id": "std004",
+      "name": "Lucia",
+      "lastName": "Hernandez",
+      "email": "lucia.hernandez@example.com",
+      "phoneNumber": "555-1004",
+      "activeCoursesId": [],
+      "completedCourses": [
+        {
+          "courseId": "crs001",
+          "approved": false
+        }
+      ]
+    },
+    {
+      "id": "std005",
+      "name": "Miguel",
+      "lastName": "Torres",
+      "email": "miguel.torres@example.com",
+      "phoneNumber": "555-1005",
+      "activeCoursesId": [
+        "crs002"
+      ],
+      "completedCourses": []
+    },
+    {
+      "id": "std006",
+      "name": "Elena",
+      "lastName": "Alvarez",
+      "email": "elena.alvarez@example.com",
+      "phoneNumber": "555-1006",
+      "activeCoursesId": [],
+      "completedCourses": []
+    },
+    {
+      "id": "std007",
+      "name": "Sergio",
+      "lastName": "Ramos",
+      "email": "sergio.ramos@example.com",
+      "phoneNumber": "555-1007",
+      "activeCoursesId": [
+        "crs005"
+      ],
+      "completedCourses": [
+        {
+          "courseId": "crs003",
+          "approved": true
+        }
+      ]
+    },
+    {
+      "id": "std008",
+      "name": "Laura",
+      "lastName": "Vega",
+      "email": "laura.vega@example.com",
+      "phoneNumber": "555-1008",
+      "activeCoursesId": [
+        "crs005"
+      ],
+      "completedCourses": []
+    },
+    {
+      "id": "std009",
+      "name": "Carlos",
+      "lastName": "Gomez",
+      "email": "carlos.gomez@example.com",
+      "phoneNumber": "555-1009",
+      "activeCoursesId": [],
+      "completedCourses": []
+    },
+    {
+      "id": "std010",
+      "name": "Valentina",
+      "lastName": "Castro",
+      "email": "valentina.castro@example.com",
+      "phoneNumber": "555-1010",
+      "activeCoursesId": [
+        "crs001",
+        "crs004"
+      ],
+      "completedCourses": []
+    }
+  ],
+  "teachers": [
+    {
+      "id": "tch001",
+      "name": "Carlos",
+      "lastName": "Perez",
+      "email": "carlos.perez@school.com",
+      "phoneNumber": "555-2001",
+      "expertise": "Angular",
+      "coursesId": [
+        "crs001",
+        "crs002"
+      ]
+    },
+    {
+      "id": "tch002",
+      "name": "Maria",
+      "lastName": "Lopez",
+      "email": "maria.lopez@school.com",
+      "phoneNumber": "555-2002",
+      "expertise": "Node.js",
+      "coursesId": [
+        "crs003",
+        "crs004"
+      ]
+    },
+    {
+      "id": "tch003",
+      "name": "John",
+      "lastName": "Smith",
+      "email": "john.smith@school.com",
+      "phoneNumber": "555-2003",
+      "expertise": "React",
+      "coursesId": [
+        "crs005"
+      ]
+    },
+    {
+      "id": "tch004",
+      "name": "Laura",
+      "lastName": "Johnson",
+      "email": "laura.johnson@school.com",
+      "phoneNumber": "555-2004",
+      "expertise": "UI/UX",
+      "coursesId": []
+    },
+    {
+      "id": "tch005",
+      "name": "Sarah",
+      "lastName": "Davis",
+      "email": "sarah.davis@school.com",
+      "phoneNumber": "555-2005",
+      "expertise": "Web Design",
+      "coursesId": []
+    }
+  ],
+  "courses": [
+    {
+      "id": "crs001",
+      "title": "Angular Basics",
+      "teacherId": "tch001",
+      "studentsEnrolledIds": [
+        "std001",
+        "std010"
+      ],
+      "startDate": "2025-03-01",
+      "endDate": "2025-05-01",
+      "daysOfWeek": [
+        "Monday",
+        "Wednesday"
+      ],
+      "schedule": "09:00 - 11:00",
+      "description": "Introducción a Angular, sus conceptos principales y creación de componentes básicos."
+    },
+    {
+      "id": "crs002",
+      "title": "Advanced Angular",
+      "teacherId": "tch001",
+      "studentsEnrolledIds": [
+        "std002",
+        "std005"
+      ],
+      "startDate": "2025-03-01",
+      "endDate": "2025-06-01",
+      "daysOfWeek": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "schedule": "18:00 - 20:00",
+      "description": "Curso avanzado de Angular, cubriendo módulos, lazy loading y optimización de performance."
+    },
+    {
+      "id": "crs003",
+      "title": "Node.js Fundamentals",
+      "teacherId": "tch002",
+      "studentsEnrolledIds": [],
+      "startDate": "2025-02-15",
+      "endDate": "2025-04-15",
+      "daysOfWeek": [
+        "Saturday"
+      ],
+      "schedule": "09:00 - 13:00",
+      "description": "Aprende los fundamentos de Node.js, su entorno y la creación de APIs sencillas."
+    },
+    {
+      "id": "crs004",
+      "title": "Node.js Microservices",
+      "teacherId": "tch002",
+      "studentsEnrolledIds": [
+        "std010"
+      ],
+      "startDate": "2025-04-20",
+      "endDate": "2025-07-20",
+      "daysOfWeek": [
+        "Saturday"
+      ],
+      "schedule": "16:00 - 20:00",
+      "description": "Crea y despliega microservicios con Node.js, utilizando Docker y patrones avanzados."
+    },
+    {
+      "id": "crs005",
+      "title": "React Intro",
+      "teacherId": "tch003",
+      "studentsEnrolledIds": [
+        "std007",
+        "std008"
+      ],
+      "startDate": "2025-03-10",
+      "endDate": "2025-05-10",
+      "daysOfWeek": [
+        "Monday",
+        "Wednesday"
+      ],
+      "schedule": "10:00 - 12:00",
+      "description": "Conoce los fundamentos de React, el manejo de componentes, state y props."
+    }
+  ]
+}

@@ -16,6 +16,7 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit(): void {
     const role = this.authService.getUserRole();
+    // const role = this.authService.getUserRole();
     // rutas basicas para todos los usuarios:
     this.routes = [
       { path: '/dashboard/home', label: 'Home' },

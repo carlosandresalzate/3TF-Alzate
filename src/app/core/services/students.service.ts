@@ -98,10 +98,11 @@ export class StudentsService {
   /**
    * @description Agrega un nuevo estudiante
    * @param student
+   * @todo
    */
   addStudents(student: Omit<Student, 'id'>): void {
     const newStudent: Student = { ...student, id: generateRandomID(6) };
-    this.students.push(newStudent);
+    this.students.push(newStudent); // si se comenta lanza error en el test
     this.studentsSubject.next([...this.students]);
   }
 

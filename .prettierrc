@@ -1,20 +1,22 @@
 {
-  "semi": true,
   "overrides": [
     {
-      "files": "*.html",
+      "files": ["*.component.html", "*.html"],
       "options": {
+        "parser": "angular",
         "arrowParens": "always",
         "bracketSameLine": false,
+        "objectWrap": "preserve",
         "bracketSpacing": true,
         "semi": true,
+        "experimentalOperatorPosition": "end",
         "experimentalTernaries": false,
         "singleQuote": false,
         "jsxSingleQuote": false,
         "quoteProps": "as-needed",
         "trailingComma": "all",
-        "singleAttributePerLine": false,
-        "htmlWhitespaceSensitivity": "ignore",
+        "singleAttributePerLine": true,
+        "htmlWhitespaceSensitivity": "css",
         "vueIndentScriptAndStyle": false,
         "proseWrap": "preserve",
         "insertPragma": false,
@@ -23,6 +25,18 @@
         "tabWidth": 2,
         "useTabs": false,
         "embeddedLanguageFormatting": "auto"
+      }
+    },
+    {
+      "files": ["*.scss"],
+      "options": {
+        "parser": "scss"
+      }
+    },
+    {
+      "files": ["*.ts"],
+      "options": {
+        "parser": "typescript"
       }
     }
   ]

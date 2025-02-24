@@ -1,42 +1,76 @@
 <div class="login-container">
   <h2 appTitleFont>Iniciar Sesion</h2>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+  >
     <!-- Campo: Nombre de usuario -->
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Usuario</mat-label>
-      <input matInput formControlName="username" placeholder="Usuario" />
-      <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
+    <mat-form-field
+      appearance="fill"
+      class="full-width"
+    >
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        formControlName="email"
+        placeholder="Email"
+      />
+      <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
         El usuario es necesario
+      </mat-error>
+      <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+        Debe ser un Email Valido
       </mat-error>
     </mat-form-field>
 
     <!-- Campo: Password -->
-    <mat-form-field appearance="fill" class="full-width">
+    <mat-form-field
+      appearance="fill"
+      class="full-width"
+    >
       <mat-label>Contraseña</mat-label>
-      <input matInput formControlName="password" placeholder="password" />
+      <input
+        matInput
+        formControlName="password"
+        placeholder="password"
+      />
       <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
         La contraseña es necesaria
       </mat-error>
     </mat-form-field>
 
     <!-- Submit: Inicias Sesion -->
-    <button mat-raised-button type="submit">Iniciar</button>
+    <button
+      mat-raised-button
+      type="submit"
+    >
+      Iniciar
+    </button>
 
     <div class="social-login">
       <p>O inicia sesión con:</p>
-      <button mat-stroked-button type="button">
+      <button
+        mat-stroked-button
+        type="button"
+      >
         <!-- <mat-icon>edit</mat-icon> -->
         Gmail
       </button>
-      <button mat-stroked-button type="button">
+      <button
+        mat-stroked-button
+        type="button"
+      >
         <!-- <mat-icon>edit</mat-icon> -->
         LinkedIn
       </button>
     </div>
 
     <!-- Mensaje de error -->
-    <div *ngIf="errorMessage" class="error-mesage">
+    <!-- <div
+      *ngIf="errorMessage"
+      class="error-mesage"
+    >
       {{ errorMessage }}
-    </div>
+    </div> -->
   </form>
 </div>
